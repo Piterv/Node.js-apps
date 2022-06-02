@@ -36,7 +36,7 @@ app.get("/work", (req, res) => {
     newListItems: workItems
   });
 })
-
+//et method handler for about route.
 app.get("/about", (req, res) => {
   res.render('about');
 })
@@ -54,7 +54,6 @@ app.post("/", (req, res) => {
     items.push(item);
     res.redirect('/');
   }
-
 });
 
 app.listen(3000, () => {
