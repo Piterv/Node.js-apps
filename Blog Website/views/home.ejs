@@ -3,5 +3,10 @@
 <h1>Home</h1>
 <p><%= startingContent %></p>
 
+<% for (let i = 0; i < composedContent.length; i++) { %>
+<div class="box">
+<p> <%= composedContent[i] %> </p>
+</div>
+<%  } %>
 
 <%- include('partials/footer'); -%>
