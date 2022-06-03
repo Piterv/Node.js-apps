@@ -30,7 +30,7 @@ app.get("/contact", (req, res)=>{
   res.render("contact", {startingContent: contactContent});
 });
 
-app.get("compose", (req, res)=>{
+app.get("/compose", (req, res)=>{
   res.render("compose");
 });
 
