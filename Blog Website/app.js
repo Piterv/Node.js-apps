@@ -22,6 +22,18 @@ app.get("/", (req, res)=>{
   res.render('home', {startingContent: homeStartingContent});
 });
 
+app.get("/about", (req, res)=>{
+  res.render('about', {startingContent: aboutContent});
+});
+
+app.get("/contact", (req, res)=>{
+  res.render("contact", {startingContent: contactContent});
+});
+
+app.get("compose", (req, res)=>{
+  res.render("compose");
+});
+
 //Starts server on purt 3000.
 app.listen(3000, ()=>{
   console.log("Server runs on port 3000");
