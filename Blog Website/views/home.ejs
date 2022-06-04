@@ -3,10 +3,14 @@
 <h1>Home</h1>
 <p><%= startingContent %></p>
 
-<% for (let i = 0; i < composedContent.length; i++) { %>
-<div class="box">
-<p> <%= composedContent[i] %> </p>
-</div>
-<%  } %>
+<% posts.forEach((post)=>{ %>
+<%  let content = post.content.slice(0, 99) %>
+
+  <div class="box">
+    <h1> <%= post.title %> </h1>
+    <p> <%= content %> ...</p>
+  </div>
+<% }) %>
+
 
 <%- include('partials/footer'); -%>
