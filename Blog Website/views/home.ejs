@@ -4,11 +4,11 @@
 <p><%= startingContent %></p>
 
 <% posts.forEach((post)=>{ %>
-<%  let content = post.content.slice(0, 99) %>
+<%  let content = post.content.substring(0, 99) %>
 
   <div class="box">
-    <h1> <%= post.title %> </h1>
-    <p> <%= content %> ...</p>
+    <h1> <%= post.title %></h1>
+    <p> <%= content %> ... <a href="/posts/<%= post.title %>"> Read More</a> </p>
   </div>
 <% }) %>
 
