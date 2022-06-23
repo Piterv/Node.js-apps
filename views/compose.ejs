@@ -1,0 +1,44 @@
+<%- include("partials/header"); -%>
+<h1>Compose</h1>
+<form class="" action="/compose" method="post">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" type="text" name="postTitle">
+    <label>Post</label>
+    <textarea class="form-control" name="postBody" rows="5" cols="30"></textarea>
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">Publish</button>
+</form>
+
+<div class="post-header">
+
+  <% if(posts.length === 0) { %>
+    <h3>You have no posts.</h3>
+  <% } else{ %>
+    <h3>You have created <%= posts.length %> posts</h3>
+  <% }%>
+
+</div>
+
+<% posts.forEach((post) => { %>
+
+<div class="bs-callout bs-callout-info">
+
+  <h4> <%= post.title %> </h4>
+  <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post._id%>">Read More</a>
+  </p>
+
+  <form method="post">
+
+    <button class="btn btn-info " type="submit" name="postEdit" value="<%=post._id%>" onclick="javascript: form.action='/edit'">Edit</button>
+    <button class="btn btn-danger " type="submit" name="postDelete" value="<%=post._id%>" onclick="javascript: form.action='/delete'">Delete post</button>
+
+  </form>
+
+</div>
+
+<% }); %>
+
+<%- include("partials/footer"); -%>
